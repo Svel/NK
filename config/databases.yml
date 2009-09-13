@@ -2,6 +2,14 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=Naklej!
-      username: root
-      password: 
+      dsn:      mysql:host=localhost;dbname=catalog_prod
+      username: catalog
+      password: catalog
+dev:
+  doctrine:
+    param:
+      dsn:      mysql:host=localhost;dbname=catalog_dev
+test:
+  doctrine:
+    param:
+      dsn:      mysql:host=localhost;dbname=catalog_test
