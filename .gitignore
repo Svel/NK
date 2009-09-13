@@ -1,0 +1,7 @@
+/cache/*
+/log/*
+/data/sql/*
+/lib/filter/*
+base/
+map/
+om/
