@@ -1,0 +1,28 @@
+Category:
+  tableName: catalog_category
+  actAs:     [NestedSet]
+  columns:
+    id:          { type: integer(11), unsigned: true, primary: true, autoincrement: true }
+    name:        { type: string(255), notnull: true }
+
+Post:
+  tableName: catalog_post
+  actAs:     [Timestampable]
+  columns:
+    id:          { type: integer(11), unsigned: true, primary: true, autoincrement: true }
+    category_id: { type: integer(11), unsigned: true, notnull: true }
+    user_name:   { type: string(255), notnull: true }
+    email:       { type: string(255), notnull: true }
+    title:       { type: string(255), notnull: true }
+    description: { type: string(), notnull: true }
+    site_url:    { type: string(255) }
+    phone:       { type: string(80) }
+    price:       { type: float, notnull: true, default: 0 }
+    expires_at:  { type: timestamp(25), notnull: true }
+  relations:
+    Category:
+      local:       category_id
+      foreign:     id
+      type:        one
+      foreignType: many
+      onDelete:    cascade
