@@ -3,11 +3,11 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
-    #description:  symfony project
-    #keywords:     symfony, project
-    #language:     en
-    #robots:       index, follow
+    title:        Наклей - разместить бесплатное объявление
+    description:  Бесплатная доска объявлений. Частные лица могут подать объявление бесплатно.
+    keywords:     бесплатно, объявление, разместить, подать
+    language:     ru
+    robots:       index, follow
 
   stylesheets:    [main.css]
 

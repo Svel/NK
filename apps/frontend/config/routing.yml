@@ -3,6 +3,12 @@ homepage:
   url:   /
   param: { module: default, action: index }
 
+page:
+  url:   /page/:url
+  class: sfDoctrineRoute
+  param: { module: page, action: show }
+  options: { model: Page, type: object }
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

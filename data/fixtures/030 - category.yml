@@ -1,0 +1,15 @@
+Category:
+  root:
+    name: Категории
+    children:
+      root1:
+        name: Недвижимость
+        children:
+          lev2_1_1:
+            name:   Аренда квартир
+          lev2_1_2:
+            name:   Покупка квартир
+          lev2_1_3:
+            name:   Аренда комнат
+          lev2_1_4:
+            name:   Коммерческая недвижимость

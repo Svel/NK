@@ -2,21 +2,27 @@ Category:
   tableName: catalog_category
   actAs:     [NestedSet]
   columns:
-    id:          { type: integer(11), unsigned: true, primary: true, autoincrement: true }
-    name:        { type: string(255), notnull: true }
+    id:          { type: integer, length: 11, unsigned: true, primary: true, autoincrement: true }
+    name:        { type: string, length: 255, notnull: true }
+  relations:
+    Post:
+      local:       id
+      foreign:     category_id
+      type:        many
+      foreignType: one
 
 Post:
   tableName: catalog_post
   actAs:     [Timestampable]
   columns:
-    id:          { type: integer(11), unsigned: true, primary: true, autoincrement: true }
-    category_id: { type: integer(11), unsigned: true, notnull: true }
-    user_name:   { type: string(255), notnull: true }
-    email:       { type: string(255), notnull: true }
-    title:       { type: string(255), notnull: true }
-    description: { type: string(), notnull: true }
-    site_url:    { type: string(255) }
-    phone:       { type: string(80) }
+    id:          { type: integer, length: 11, unsigned: true, primary: true, autoincrement: true }
+    category_id: { type: integer, length: 11, unsigned: true, notnull: true }
+    user_name:   { type: string, length: 255, notnull: true }
+    email:       { type: string, length: 255, notnull: true }
+    title:       { type: string, length: 255, notnull: true }
+    description: { type: string, notnull: true }
+    site_url:    { type: string, length: 255 }
+    phone:       { type: string, length: 80 }
     price:       { type: float, notnull: true, default: 0 }
     expires_at:  { type: timestamp(25), notnull: true }
   relations:
@@ -26,3 +32,15 @@ Post:
       type:        one
       foreignType: many
       onDelete:    cascade
+
+Page:
+  tableName: app_pages
+  actAs:     [Timestampable]
+  columns:
+    id:      { type: integer, length: 5, unsigned: true, primary: true, autoincrement: true }
+    slug:    { type: string, length: 128, notnull: true, unique: true }
+    title:   { type: string, length: 128, notnull: false }
+    keywords:    { type: string, length: 255, notnull: false }
+    description: { type: string, length: 255, notnull: false }
+    header:  { type: string, length: 80 }
+    content: { type: clob, notnull: true }
