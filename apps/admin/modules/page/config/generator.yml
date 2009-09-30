@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator # or sfPropelGenerator
+  param:
+    model_class:           Page
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          page
+    with_doctrine_route:   1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:   ~
+        layout:  ~ # tabular or stacked
+        params:  ~
+        display: ~
+        hide:    ~
+        sort:    ~
+        max_per_page:   ~
+        batch_actions:  ~
+        object_actions: ~
+        actions: ~
+      filter:  ~
+      form:
+        display: ~
+        class:   ~
+      edit:
+        title:   ~
+        actions: ~
+      new:
+        title:   ~
+        actions: ~
+
