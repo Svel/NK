@@ -13,9 +13,9 @@
       <span><?php echo link_to('Наклей!', '@homepage') ?></span>
     </div>
     <div id="wrapper">
-      <div id="content"><?php echo $sf_content ?></div>
       <div id="tree"><?php include_component('category', 'tree') ?></div>
+      <div id="content"><?php echo $sf_content ?></div>
     </div>
-    <div id="footer">&copy; naklej.ru - бесплатные объявления, <?php echo date('Y', time()) ?></div>
+    <div id="footer"><p>&copy; <?php echo link_to('naklej.ru', '@homepage') ?> - бесплатные объявления, <?php echo date('Y', time()) ?></p></div>
   </body>
 </html>
