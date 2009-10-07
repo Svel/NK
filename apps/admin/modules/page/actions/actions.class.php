@@ -13,4 +13,13 @@ require_once dirname(__FILE__).'/../lib/pageGeneratorHelper.class.php';
  */
 class pageActions extends autoPageActions
 {
+  /**
+   * upload files from wysiwyg
+   */
+  public function executeUpload(sfRequest $request)
+  {
+    $file = $request->getFiles('upload');
+
+    return '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(1, \'path/to/file\', \'\');</script>';
+  }
 }

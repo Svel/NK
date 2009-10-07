@@ -17,16 +17,18 @@ generator:
         title:   ~
         layout:  ~ # tabular or stacked
         params:  ~
-        display: ~
+        display: [id, slug, title, header, created_at, updated_at]
         hide:    ~
         sort:    ~
         max_per_page:   ~
         batch_actions:  ~
         object_actions: ~
         actions: ~
-      filter:  ~
+      filter:    ~
       form:
-        display: ~
+        display:
+          tab_meta:     [ slug, title, keywords, description ]
+          tab_content:  [ header, content ]
         class:   ~
       edit:
         title:   ~
@@ -34,4 +36,3 @@ generator:
       new:
         title:   ~
         actions: ~
-

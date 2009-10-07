@@ -30,3 +30,9 @@ all:
 
     # Cache settings
     lazy_cache_key:         true        # Delays creation of a cache key until after checking whether an action or partial is cacheable
+
+    default_culture:        ru_RU
+    charset:                utf-8
+    i18n:                   true
+
+    standard_helpers:       [Partial, Form, Cache, I18N]

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN"
+  "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="RU" datatype="plaintext"
+      original="messages" date="2009-10-04T20:00:00Z"
+      product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Category</source>
+        <target>Категория</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>User name</source>
+        <target>Имя пользователя</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Title</source>
+        <target>Заголовок объявления</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Description</source>
+        <target>Текст объявления</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Price</source>
+        <target>Цена</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Site url</source>
+        <target>Адрес сайта</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Phone</source>
+        <target>Телефон</target>
+      </trans-unit>
+
+      <trans-unit id="10">
+        <source>New Post</source>
+        <target>Новое бесплатное объявление</target>
+      </trans-unit>
+
+      <!--// validators //-->
+      <trans-unit id="31">
+        <source>Required field</source>
+        <target>Обязательное поле</target>
+      </trans-unit>
+
+      <trans-unit id="101">
+        <source>Latest Post List</source>
+        <target>Последние добавленные бесплатные объявления</target>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>read more</source>
+        <target>подробнее</target>
+      </trans-unit>
+
+      <trans-unit id="201">
+        <source>User name</source>
+        <target>Имя</target>
+      </trans-unit>
+      <trans-unit id="202">
+        <source>Actual from</source>
+        <target>Размещено</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

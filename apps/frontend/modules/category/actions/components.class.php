@@ -64,6 +64,10 @@ class categoryComponents extends sfComponents
                       ->getAction($this->getRequest()->getParameter('module'), $this->getRequest()->getParameter('action'))
                       ->getRoute();
         if ($route instanceof sfDoctrineRoute) {
+            $options = $route->getOptions();
+            if ($options['type'] != 'object') {
+                return false;
+            }
             $ob = $route->getObject();
 
             if ($ob instanceof Category) {

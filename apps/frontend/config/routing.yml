@@ -1,19 +1,52 @@
+
+# просмотр категрии каталога
+category:
+  url:     /category/:id
+  class:   sfDoctrineRoute
+  param:   { module: category, action: show }
+  options: { model: Category, type: object }
+
+post:
+  url:     /vp-:id
+  class:   sfDoctrineRoute
+  param:   { module: post, action: show }
+  options: { model: Post, type: object, segment_separators: [., /, -] }
+
+post_new:
+  url:     /post
+  class:   sfRequestRoute
+  param:   { module: post, action: new }
+  options: { model: Post, type: object }
+  requirements:
+    sf_method: [get]
+
+post_create:
+  url:     /post
+  class:   sfRequestRoute
+  param:   { module: post, action: create }
+  options: { model: Post, type: object }
+  requirements:
+    sf_method: [post]
+
 # default rules
 homepage:
-  url:   /
-  param: { module: default, action: index }
+  url:     /
+  class:   sfDoctrineRoute
+  param:   { module: post, action: index }
+  options: { model: Post, type: list, method: getHomePageQuery }
 
+# статические страницы
 page:
-  url:   /page/:url
-  class: sfDoctrineRoute
-  param: { module: page, action: show }
+  url:     /page/:slug
+  class:   sfDoctrineRoute
+  param:   { module: page, action: show }
   options: { model: Page, type: object }
 
 # generic rules
 # please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+#default_index:
+#  url:   /:module
+#  param: { action: index }
 
-default:
-  url:   /:module/:action/*
+#default:
+#  url:   /:module/:action/*

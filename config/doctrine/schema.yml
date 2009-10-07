@@ -15,16 +15,21 @@ Post:
   tableName: catalog_post
   actAs:     [Timestampable]
   columns:
-    id:          { type: integer, length: 11, unsigned: true, primary: true, autoincrement: true }
-    category_id: { type: integer, length: 11, unsigned: true, notnull: true }
-    user_name:   { type: string, length: 255, notnull: true }
-    email:       { type: string, length: 255, notnull: true }
-    title:       { type: string, length: 255, notnull: true }
-    description: { type: string, notnull: true }
-    site_url:    { type: string, length: 255 }
-    phone:       { type: string, length: 80 }
-    price:       { type: float, notnull: true, default: 0 }
-    expires_at:  { type: timestamp(25), notnull: true }
+    id:           { type: integer, notnull: true, length: 11, unsigned: true, primary: true, autoincrement: true }
+    category_id:  { type: integer, notnull: true, length: 11, unsigned: true }
+    user_name:    { type: string,  notnull: true, length: 255 }
+    email:        { type: string,  notnull: true, length: 255 }
+    email_hide:   { type: boolean, notnull: true, default: true }
+    title:        { type: string,  notnull: true, length: 255 }
+    description:  { type: string,  notnull: true }
+    site_url:     { type: string,  length: 255 }
+    phone:        { type: string,  length: 80 }
+    price:        { type: float,   notnull: true, default: 0 }
+    expires_at:   { type: timestamp, notnull: true }
+    is_validated: { type: boolean, notnull: true, default: false }
+  indexes:
+    expires_at_idx:
+      fields: [expires_at]
   relations:
     Category:
       local:       category_id
@@ -32,6 +37,25 @@ Post:
       type:        one
       foreignType: many
       onDelete:    cascade
+    User:
+      local:       email
+      foreign:     email
+      type:        one
+      foreignType: many
+      onDelete:    cascade
+
+User:
+  tableName: catalog_users
+  columns:
+    email:       { type: string, notnull: true, length: 255, primary: true }
+    name:        { type: string, notnull: true, length: 255 }
+    secret:      { type: string, notnull: true, length: 255 }
+  relations:
+    Post:
+      local:       email
+      foreign:     email
+      type:        many
+      foreignType: one
 
 Page:
   tableName: app_pages

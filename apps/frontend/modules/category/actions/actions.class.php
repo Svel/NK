@@ -10,56 +10,14 @@
  */
 class categoryActions extends sfActions
 {
-  public function executeIndex(sfWebRequest $request)
+  public function executeShow(sfWebRequest $request)
   {
-    $this->category_list = $this->getRoute()->getObjects();
-  }
+    $this->category = $this->getRoute()->getObject();
 
-  public function executeNew(sfWebRequest $request)
-  {
-    $this->form = new CategoryForm();
-  }
+    $this->pager = new sfDoctrinePager('Post', sfConfig::get('app_pager_products', 10));
 
-  public function executeCreate(sfWebRequest $request)
-  {
-    $this->form = new CategoryForm();
-
-    $this->processForm($request, $this->form);
-
-    $this->setTemplate('new');
-  }
-
-  public function executeEdit(sfWebRequest $request)
-  {
-    $this->form = new CategoryForm($this->getRoute()->getObject());
-  }
-
-  public function executeUpdate(sfWebRequest $request)
-  {
-    $this->form = new CategoryForm($this->getRoute()->getObject());
-
-    $this->processForm($request, $this->form);
-
-    $this->setTemplate('edit');
-  }
-
-  public function executeDelete(sfWebRequest $request)
-  {
-    $request->checkCSRFProtection();
-
-    $this->getRoute()->getObject()->delete();
-
-    $this->redirect('category/index');
-  }
-
-  protected function processForm(sfWebRequest $request, sfForm $form)
-  {
-    $form->bind($request->getParameter($form->getName()));
-    if ($form->isValid())
-    {
-      $category = $form->save();
-
-      $this->redirect('category/edit?id='.$category->getId());
-    }
+    $this->pager->setQuery($this->category->getPagerQuery());
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 }

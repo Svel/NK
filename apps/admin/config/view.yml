@@ -3,13 +3,13 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:        Управление доской объявлений
     #description:  symfony project
     #keywords:     symfony, project
-    #language:     en
+    language:     ru
     #robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    [sf/sf_admin/css/main.css]
 
   javascripts:    []
 

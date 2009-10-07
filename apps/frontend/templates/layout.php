@@ -10,11 +10,18 @@
   </head>
   <body>
     <div id="header">
-      <span><?php echo link_to('Наклей!', '@homepage') ?></span>
+      <span id="logo"><?php echo link_to('Наклей!', '@homepage') ?></span>
+      <div id="menu">
+        <ul>
+          <li><?php echo link_to(__('Add post'), '@post_new') ?></li>
+          <li><?php echo link_to(__('Help'), '@page?slug=help') ?></li>
+          <li><?php echo link_to(__('About'), '@page?slug=about') ?></li>
+        </ul>
+      </div>
     </div>
     <div id="wrapper">
       <div id="tree"><?php include_component('category', 'tree') ?></div>
-      <div id="content"><?php echo $sf_content ?></div>
+      <div id="content"><?php include_slot('content_breadcrumbs') ?><?php echo $sf_content ?></div>
     </div>
     <div id="footer"><p>&copy; <?php echo link_to('naklej.ru', '@homepage') ?> - бесплатные объявления, <?php echo date('Y', time()) ?></p></div>
   </body>

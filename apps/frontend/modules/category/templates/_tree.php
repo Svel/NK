@@ -1,5 +1,3 @@
-
-<div id="category_tree">
 <?php
     if ($categories) {
 
@@ -21,12 +19,10 @@
             }
 
             $selected = ($category->getId() == $selectedId) ? array('class' => 'selected') : array();
-            //echo "<li>", link_to(htmlspecialchars($category['name'], ENT_QUOTES), 'catalog_list', $category, $selected);
-            echo "<li>", htmlspecialchars($category['name'], ENT_QUOTES);
+            echo "<li>", link_to(htmlspecialchars($category['name'], ENT_QUOTES), 'category', $category, $selected);
 
             $prevLevel = $level;
         }
         echo str_repeat('</li></ul>', $level);
     }
 ?>
-</div>
