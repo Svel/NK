@@ -30,7 +30,18 @@ ul {
   #header #logo {
     display:block;
     float:left;
+    font-family:"Helvetica Neue",arial,sans-serif;
+    font-size:124%;
+    font-weight:bold;
+    line-height:131%;
+    margin:0;
+    color:#FFFFFF;
+    padding:7px 10px 10px;
+    text-shadow:0 0 3px #000000;
     }
+    #header #logo a {
+      text-decoration:none;
+      }
   #menu {
     overflow:hidden;
     }
@@ -43,10 +54,6 @@ ul {
         display:inline;
         font-family:"Helvetica Neue",arial,sans-serif;
         font-size:108%;
-        font-size-adjust:none;
-        font-stretch:normal;
-        font-style:normal;
-        font-variant:normal;
         font-weight:bold;
         line-height:131%;
         margin:0;
