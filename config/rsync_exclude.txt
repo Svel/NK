@@ -1,6 +1,10 @@
 # Project files
 /cache/*
 /log/*
+/lib/filter/*
+/lib/form/doctrine/base/*
+/lib/model/doctrine/base/*
+/test/*
 /web/*_dev.php
 /web/uploads/*
 
