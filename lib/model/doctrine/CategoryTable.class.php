@@ -15,7 +15,7 @@ class CategoryTable extends Doctrine_Table
   public function getTreeQuery(Doctrine_Query $query = null)
   {
     if (!$query) {
-      $query = Doctrine::getTable('Category')->createQuery();
+      $query = $this->createQuery();
     }
 
     $query->andWhere('level > ?', 0)

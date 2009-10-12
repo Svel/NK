@@ -21,10 +21,12 @@ Post:
     email:        { type: string,  notnull: true, length: 255 }
     email_hide:   { type: boolean, notnull: true, default: true }
     title:        { type: string,  notnull: true, length: 255 }
-    description:  { type: string,  notnull: true }
+    preview:      { type: string,  notnull: true, length: 1024 }
+    description:  { type: clob,    notnull: true, length: 90000 }
     site_url:     { type: string,  length: 255 }
     phone:        { type: string,  length: 80 }
     price:        { type: float,   notnull: true, default: 0 }
+    secret:       { type: string, notnull: true, length: 8 }
     expires_at:   { type: timestamp, notnull: true }
     is_validated: { type: boolean, notnull: true, default: false }
   indexes:
@@ -47,9 +49,9 @@ Post:
 User:
   tableName: catalog_users
   columns:
-    email:       { type: string, notnull: true, length: 255, primary: true }
-    name:        { type: string, notnull: true, length: 255 }
-    secret:      { type: string, notnull: true, length: 255 }
+    email:        { type: string, notnull: true, length: 255, primary: true }
+    name:         { type: string, notnull: true, length: 255 }
+    secret:       { type: string, notnull: true, length: 8 }
   relations:
     Post:
       local:       email
